@@ -6,6 +6,8 @@ defmodule Phoenixrest.Posts.Post do
     field :title, :string
     field :body, :string
 
+    belongs_to :user, Phoenixrest.Users.User
+
     timestamps(type: :utc_datetime)
   end
 

@@ -6,6 +6,8 @@ defmodule Phoenixrest.Accounts.User do
     field :name, :string
     field :email, :string
 
+    has_many :posts, Phoenixrest.Posts.Post
+
     timestamps(type: :utc_datetime)
   end
 
