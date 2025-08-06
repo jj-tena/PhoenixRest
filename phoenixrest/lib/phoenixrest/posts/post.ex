@@ -6,7 +6,7 @@ defmodule Phoenixrest.Posts.Post do
     field :title, :string
     field :body, :string
 
-    belongs_to :user, Phoenixrest.Users.User
+    belongs_to :user, Phoenixrest.Accounts.User
 
     timestamps(type: :utc_datetime)
   end
@@ -14,7 +14,7 @@ defmodule Phoenixrest.Posts.Post do
   @doc false
   def changeset(post, attrs) do
     post
-    |> cast(attrs, [:body, :title])
-    |> validate_required([:body, :title])
+    |> cast(attrs, [:body, :title, :user_id])
+    |> validate_required([:body, :title, :user_id])
   end
 end
